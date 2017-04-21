@@ -1,0 +1,30 @@
+.introContainer {
+    margin: 0px 10px;
+}
+
+.intro {
+    text-indent: 0px;
+    font-size: 13px;
+    text-align: justify;
+}
+
+    .intro span {
+        font-family: 'Myriad Pro';
+    }
+
+    .intro ul {
+        padding-left: 25px;
+        font-size: 13px;
+        font-family: 'Myriad Pro';
+    }
+
+        .intro ul li {
+            color: #231f20 !important;
+            list-style-position: outside;
+            list-style-type: disc;
+        }
+
+.reference {
+    text-align: justify;
+    font-size: 12px !important;
+}

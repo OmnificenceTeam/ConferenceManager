@@ -1,0 +1,129 @@
+﻿<div id="loginContainer">
+    <div id="logoHide">
+        <div style="height:100%;">
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="registerSection" class="container login-cont" >
+        <div>
+            <div class="login">
+                <div>
+                    <!--<img src="img/mscm.png" class="responsive-image" style="visibility: hidden" />-->
+                    <img src="img/frames/1.png" id="img-frame-1" class="responsive-image" style="display: none" />
+                    <img src="img/frames/2.png" id="img-frame-2" class="responsive-image" style="display: none" />
+                    <img src="img/frames/3.png" id="img-frame-3" class="responsive-image" style="display: none" />
+                    <img src="img/frames/4.png" id="img-frame-4" class="responsive-image" style="display: none" />
+                    <img src="img/frames/5.png" id="img-frame-5" class="responsive-image" style="display: none" />
+                    <img src="img/frames/6.png" id="img-frame-6" class="responsive-image" style="display: none" />
+                    <img src="img/frames/7.png" id="img-frame-7" class="responsive-image" style="display: none" />
+                    <img src="img/frames/8.png" id="img-frame-8" class="responsive-image" style="display: none" />
+                    <img src="img/frames/9.png" id="img-frame-9" class="responsive-image" style="display: none" />
+                    <img src="img/frames/10.png" id="img-frame-10" class="responsive-image" style="display: none" />
+                    <img src="img/frames/11.png" id="img-frame-11" class="responsive-image" style="display: none" />
+                    <img src="img/frames/12.png" id="img-frame-12" class="responsive-image" style="display: none" />
+                    <img src="img/frames/13.png" id="img-frame-13" class="responsive-image" style="display: none" />
+                    <img src="img/frames/14.png" id="img-frame-14" class="responsive-image" style="display: none" />
+                    <img src="img/frames/15.png" id="img-frame-15" class="responsive-image" style="display: none" />
+                </div>
+                <br />
+                <div id="login-input-section">
+                    <div class="container">
+                        <div class="contact-form no-bottom">
+                            <form class="contactForm" id="contactForm">
+                                <fieldset>
+                                    <div class="formFieldWrap name-field" style="visibility: hidden">
+                                        <label class="field-title contactNameField" for="contactNameField">
+                                            Name:
+                                            <span>(required)</span>
+                                        </label>
+                                        <input type="text" name="contactNameField" value="" class="contactField requiredField" id="contactNameField" />
+                                    </div>
+                                    <div class="formFieldWrap email-field" style="visibility: hidden">
+                                        <label class="field-title contactEmailField" for="contactEmailField">
+                                            Email:
+                                            <span>(required)</span>
+                                        </label>
+                                        <input type="text" name="contactEmailField" value="" class="contactField requiredField requiredEmailField" id="contactEmailField" />
+                                    </div>
+                                    <div class="formFieldWrap country-field" style="visibility: hidden">
+                                        <label class="field-title contactCountryField" for="contactCountryField">
+                                            Country:
+                                            <span>(required)</span>
+                                        </label>
+                                        <select id="contactCountryField" name="contactCountryField" class="contactField requiredField"></select>
+                                    </div>
+                                    <div class="formFieldWrap access-code-field" style="visibility: hidden">
+                                        <label class="field-title accessCodeField" for="accessCodeField">
+                                            Access Code:
+                                            <span>(required)</span>
+                                        </label>
+                                        <input type="text" name="accessCodeField" value="" class="contactField requiredField" id="accessCodeField" />
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div style=" height:21px; max-width: 300px; margin: 0 auto;">
+                        <div class="formValidationError name" id="contactNameFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Name is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="contactEmailFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* E-mail is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="contactEmailFieldError2">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* E-mail must be valid</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="contactCountryFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Country is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="specialityFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* speciality is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="accessCodeFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Access code is required</p>
+                            </div>
+                        </div>
+
+                        <div class="formValidationError" id="invalidCodeFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Access code is invalid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="registerArea register-button" align="center" style="visibility: hidden">
+                        <div class="formSubmitButtonErrorsWrap">
+                            <input type="button" data-animate="1" onclick="onclickLogin(this);" class="buttonWrap button-minimal contactSubmitButton transition registerButton" id="contactSubmitButton" value="Register" data-formid="contactForm" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="disclaimerContainer disclaimer-logo" style="display: none">
+                        <img src="img/medtrix.png" style="width: 140px; margin:0 auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loaderSection" style="text-align: center; position: absolute; top:40%; transform: translate(0, -50%); width: 100%; display:none;">
+        <img id="aftrlgin_logo" src="img/mscm.png" style="" />
+        <br />
+        <p id="plzwt" style="">Please wait...</p>
+    </div>
+    <p class="devVersion">
+        MSCM-SUMMIT-642016-19
+    </p>
+</div>
+
+

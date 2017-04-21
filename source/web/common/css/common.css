@@ -1,0 +1,26 @@
+html {
+	height: 100%;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-webkit-overflow-scrolling: touch;
+	touch-action: none;
+	overflow:hidden;
+}
+
+body {
+    background-color: black;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+	height: 100%;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-webkit-overflow-scrolling: touch;
+	touch-action: none;
+}
+
+.decoration {
+	background-color: #fff !important;
+    border-bottom: #fff !important;
+	/*height: 1px !important;*/
+}

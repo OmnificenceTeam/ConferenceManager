@@ -1,0 +1,1934 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--Declare page as mobile friendly -->
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- Declare page as iDevice WebApp friendly -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- iDevice WebApp Splash Screen, Regular Icon, iPhone, iPad, iPod Retina Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/splash/splash-icon.png">
+    <!-- iPhone 3, 3Gs -->
+    <link rel="apple-touch-startup-image" href="img/splash/splash-screen.png" media="screen and (max-device-width: 320px)" />
+    <!-- iPhone 4 -->
+    <link rel="apple-touch-startup-image" href="img/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
+    <!-- iPhone 5 -->
+    <link rel="apple-touch-startup-image" sizes="640x1096" href="img/splash/splash-screen@3x.png" />
+
+    <title>MSCM 2016</title>
+
+    <!-- Common styles -->
+    <link rel="stylesheet" type="text/css" href="common/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/framework.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/framework-style.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/sidebar.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/bxslider.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/swipebox.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/common.css" />
+
+    <!-- App specific styles -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/feedback.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlights.css" />
+    <link rel="stylesheet" type="text/css" href="css/introduction.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/messages.css" />
+    <link rel="stylesheet" type="text/css" href="css/poll.css" />
+    <link rel="stylesheet" type="text/css" href="css/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="css/speaker.css" />
+    <link rel="stylesheet" type="text/css" href="css/venue.css" />
+    <link rel="stylesheet" type="text/css" href="css/notes.css" />
+    <link rel="stylesheet" type="text/css" href="css/preread.css" />
+
+    <!-- Core JS -->
+    <script type="text/javascript" src="common/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="common/js/jquery-ui-min.js"></script>
+    <script type="text/javascript" src="common/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="common/js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="common/js/hammer.js"></script>
+    <script type="text/javascript" src="common/js/framework.js"></script>
+    <script type="text/javascript" src="common/js/snap.js"></script>
+    <script type="text/javascript" src="common/js/subscribe.js"></script>
+    <script type="text/javascript" src="common/js/bxslider.js"></script>
+    <script type="text/javascript" src="common/js/colorbox.js"></script>
+    <script type="text/javascript" src="common/js/custom.js"></script>
+
+    <!-- JSSOR (For Highlights)-->
+    <script type="text/javascript" src="common/js/jssor.core.js"></script>
+    <script type="text/javascript" src="common/js/jssor.utils.js"></script>
+    <script type="text/javascript" src="common/js/jssor.slider.js"></script>
+
+    <!-- Readers -->
+    <script type="text/javascript" src="common/js/xmlReader.js"></script>
+    <script type="text/javascript" src="common/js/htmlReader.js"></script>
+
+    <!-- Graph -->
+    <script type="text/javascript" src="common/js/RGraph.common.core.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.common.dynamic.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.common.tooltips.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.common.effects.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.bar.js"></script>
+
+    <!-- Storage Core -->
+    <script type="text/javascript" src="js/storagecore.js"></script>
+
+    <!-- document ready -->
+    <script type="text/javascript" src="js/ready.js"></script>
+
+    <!-- Application JSON file -->
+    <script type="text/javascript" src="js/conferenceData.js"></script>
+
+    <style type="text/css">
+        *:not(html) {
+            -webkit-transform: translate3d(0,0,0);
+        }
+    </style>
+</head>
+<body class="appLogin" style="margin: 0 auto;" onload="onFirstLoad();">
+    <input type="hidden" id="HdnSpeakerId" value="0" />
+    <input type="hidden" id="HdnTopicId" value="0" />
+    <input type="hidden" id="HdnUserId" />
+    <input type="hidden" id="HdnNotyId" value="0" />
+    <input type="hidden" id="HdnOptionId" />
+
+    <div id="maincont" style="height: 400px;">
+        <div id="menu" style="display: none;">
+            <div class="page-header">
+                <table class="logo-container">
+                    <tr>
+                        <td class="logo-left">
+                            <img src="img/mscm.png" class="logo-left">
+                        </td>
+                        <td class="logo-right">
+                            <img src="img/medtrix.png" class="logo-right">
+                        </td>
+                    </tr>
+                </table>
+                <a onclick="showSideBar()" class="deploy-sidebar"></a>
+            </div>
+        </div>
+        <div id="commonHeader" style="display: none;">
+            <h4 class="heading center-text headerText" id="details-header">INTRODUCTION TO SUMMIT</h4>
+            <img id="zoomIn" src="img/zoom_in.png" onclick="onClickZoomIn();" style="display: none;">
+            <img id="zoomOut" src="img/zoom_out.png" onclick="onClickZoomOut();" style="display: none;">
+        </div>
+
+        <div id="sidemenubar" style="">
+            <div id="sidebar" class="page-sidebar">
+                <div class="page-sidebar-scroll">
+                    <div class="sidebar-header">
+                        <a onclick="showSideBar()" class="delete-sidebar"></a>
+                    </div>
+                    <p class="sidebar-separator">Main Menu</p>
+                    <a data-id="introduction" id="intro" data-title="INTRODUCTION TO SUMMIT" data-animate="1" class="nav-item intro-nav ">
+                        Introduction
+                        <em class="nav-onit"></em>
+                    </a>
+                    <a data-id="preread" id="PreM" data-title="PRE-READ" data-animate="1" class="nav-item preread-nav " onclick="onclickPrereadCmldiv();">
+                        Pre-read
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="agenda" id="AgendaM" onclick="onAgendaLoad()" data-title="AGENDA" data-animate="1" class="nav-item agenda-nav">
+                        Agenda
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="speakerlist" id="SpeakerM" onclick="onLoadSpeakerList();" data-title="FACULTY MEMBERS" data-animate="1" class="nav-item user-nav ">
+                        Faculty Members
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="venue" id="VenueM" onclick="onClickVenue();" data-title="VENUE" data-animate="1" class="nav-item venue-nav ">
+                        Venue
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="message" id="MessM" data-title="MESSAGES" onclick="onMessageLoad();" data-animate="1" class="nav-item message-nav ">
+                        Messages
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="poll" id="PollM" onclick="onLoadPoll();" data-title="POLL" data-animate="1" class="nav-item chart-nav ">
+                        Poll
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="askquery" onclick="onQueryPageLoad();" data-title="ASK A QUERY" data-animate="1" class="nav-item query-nav ">
+                        Ask a query
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="feedback" id="FeedM" data-title="FEEDBACK" data-animate="1" class="nav-item clipboard-nav ">
+                        Feedback
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="notes" id="NotesM" onclick="onLoadNotes();" data-title="NOTES" data-animate="1" class="nav-item notes-nav ">
+                        Notes
+                        <em class="nav-page"></em>
+                    </a>
+                 
+                     <a data-id="help" onclick="createHelpContents();" id="HelpM" data-title="HELP AND SUPPORT" data-animate="1" class="nav-item help-nav ">
+                        Help &amp; Support
+                        <em class="nav-page"></em>
+                    </a> 
+                    <a data-id="highlights" onclick="Onclick_Back();" id="highlightM" data-title="HIGHLIGHTS" data-animate="1" class="nav-item highlights-nav ">
+                        Highlights
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="survey" id="SurveyM" onclick="onLoadSurvey();" data-title="SURVEY" data-animate="1" class="nav-item survey-nav">
+                        Survey
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="workshop" id="WorkshopM" data-title="WORKSHOP" onclick="onLoadWorkshop();" data-animate="1" class="nav-item workshop-nav ">
+                        Workshop
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-toggle="modal" data-target="#exitPromptModal" data-id="#login" data-animate="2" class="nav-item logout-nav ">
+                        Logout
+                        <em class="nav-page"></em>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="contentdiv" style="">
+<div style='display:none;' id='login' class='commonpage' ><div id="loginContainer">
+    <div id="logoHide">
+        <div style="height:100%;">
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="registerSection" class="container login-cont" >
+        <div>
+            <div class="login">
+                <div>
+                    <!--<img src="img/mscm.png" class="responsive-image" style="visibility: hidden" />-->
+                    <img src="img/frames/1.png" id="img-frame-1" class="responsive-image" style="display: none" />
+                    <img src="img/frames/2.png" id="img-frame-2" class="responsive-image" style="display: none" />
+                    <img src="img/frames/3.png" id="img-frame-3" class="responsive-image" style="display: none" />
+                    <img src="img/frames/4.png" id="img-frame-4" class="responsive-image" style="display: none" />
+                    <img src="img/frames/5.png" id="img-frame-5" class="responsive-image" style="display: none" />
+                    <img src="img/frames/6.png" id="img-frame-6" class="responsive-image" style="display: none" />
+                    <img src="img/frames/7.png" id="img-frame-7" class="responsive-image" style="display: none" />
+                    <img src="img/frames/8.png" id="img-frame-8" class="responsive-image" style="display: none" />
+                    <img src="img/frames/9.png" id="img-frame-9" class="responsive-image" style="display: none" />
+                    <img src="img/frames/10.png" id="img-frame-10" class="responsive-image" style="display: none" />
+                    <img src="img/frames/11.png" id="img-frame-11" class="responsive-image" style="display: none" />
+                    <img src="img/frames/12.png" id="img-frame-12" class="responsive-image" style="display: none" />
+                    <img src="img/frames/13.png" id="img-frame-13" class="responsive-image" style="display: none" />
+                    <img src="img/frames/14.png" id="img-frame-14" class="responsive-image" style="display: none" />
+                    <img src="img/frames/15.png" id="img-frame-15" class="responsive-image" style="display: none" />
+                </div>
+                <br />
+                <div id="login-input-section">
+                    <div class="container">
+                        <div class="contact-form no-bottom">
+                            <form class="contactForm" id="contactForm">
+                                <fieldset>
+                                    <div class="formFieldWrap name-field" style="visibility: hidden">
+                                        <label class="field-title contactNameField" for="contactNameField">
+                                            Name:
+                                            <span>(required)</span>
+                                        </label>
+                                        <input type="text" name="contactNameField" value="" class="contactField requiredField" id="contactNameField" />
+                                    </div>
+                                    <div class="formFieldWrap email-field" style="visibility: hidden">
+                                        <label class="field-title contactEmailField" for="contactEmailField">
+                                            Email:
+                                            <span>(required)</span>
+                                        </label>
+                                        <input type="text" name="contactEmailField" value="" class="contactField requiredField requiredEmailField" id="contactEmailField" />
+                                    </div>
+                                    <div class="formFieldWrap country-field" style="visibility: hidden">
+                                        <label class="field-title contactCountryField" for="contactCountryField">
+                                            Country:
+                                            <span>(required)</span>
+                                        </label>
+                                        <select id="contactCountryField" name="contactCountryField" class="contactField requiredField"></select>
+                                    </div>
+                                    <div class="formFieldWrap access-code-field" style="visibility: hidden">
+                                        <label class="field-title accessCodeField" for="accessCodeField">
+                                            Access Code:
+                                            <span>(required)</span>
+                                        </label>
+                                        <input type="text" name="accessCodeField" value="" class="contactField requiredField" id="accessCodeField" />
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div style=" height:21px; max-width: 300px; margin: 0 auto;">
+                        <div class="formValidationError name" id="contactNameFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Name is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="contactEmailFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* E-mail is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="contactEmailFieldError2">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* E-mail must be valid</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="contactCountryFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Country is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="specialityFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* speciality is required</p>
+                            </div>
+                        </div>
+                        <div class="formValidationError" id="accessCodeFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Access code is required</p>
+                            </div>
+                        </div>
+
+                        <div class="formValidationError" id="invalidCodeFieldError">
+                            <div class="small-notification red-notification no-bottom">
+                                <p>* Access code is invalid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="registerArea register-button" align="center" style="visibility: hidden">
+                        <div class="formSubmitButtonErrorsWrap">
+                            <input type="button" data-animate="1" onclick="onclickLogin(this);" class="buttonWrap button-minimal contactSubmitButton transition registerButton" id="contactSubmitButton" value="Register" data-formid="contactForm" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="disclaimerContainer disclaimer-logo" style="display: none">
+                        <img src="img/medtrix.png" style="width: 140px; margin:0 auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loaderSection" style="text-align: center; position: absolute; top:40%; transform: translate(0, -50%); width: 100%; display:none;">
+        <img id="aftrlgin_logo" src="img/mscm.png" style="" />
+        <br />
+        <p id="plzwt" style="">Please wait...</p>
+    </div>
+    <p class="devVersion">
+        MSCM-SUMMIT-642016-19
+    </p>
+</div>
+
+
+</div><div style='display:none;' id='introduction' class='commonpage' ><div class="all-elements">
+    <div>
+        <div id="content" class="page-content">
+            <div class="container main-Container">
+                <br />
+                <div class="introContainer">
+                    <div class="intro">
+                        <span style="">
+                            Hello Everyone,
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                            Imagine organising a conference:
+                        </span>
+                        <br />
+                        <ul id="imgine_points">
+                            <li>with maximum participation through active interaction among participants</li>
+                            <li>where you get to know what is of interest to each person who attends</li>
+                            <li>which is cost effective</li>
+                            <li>which is environment friendly</li>
+                        </ul>
+                        <br />
+                        <span>
+                            I introduce you to the MedTrix Smartphone Conference Manager (MSCM), a conference app, which is compatible with iOS, Android and Windows devices. MSCM assists you in engaging with the attendees even prior to the start of the conference and keeps that engagement going during the event and even after it is done.
+                        </span>
+                        <br /><br />
+                        <span>
+                            The app provides an opportunity for conference attendees to connect, interact, learn, share comments, ideas and knowledge giving a complete control over the event experience. In a digitally connected world, MSCM provides you with assistance for staging your conferences successfully.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                            MSCM is an environment-friendly alternative, reducing the usage of paper and printing, while also being cost-effective.  The hybrid build framework makes updating content instantaneous, making it easy to share all updates, changes in schedules, etc.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                            I invite you to take a tour of the app to explore all the features and to understand why MSCM is ready to be part of your next event.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                            Regards,<br />
+                            Vimal Narayanan,<br />
+                            Director<br />
+                            MedTrix Healthcare Pvt. Ltd.
+                        </span>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='preread' class='commonpage' ><div class="all-elements">
+    <div>
+        <div id="content" class="page-content">
+            <div class="container main-Container">
+                <br />
+                <div class="col-lg-12" id="read-tab">
+                    <div>
+                        <table style="width:100%;margin-bottom: 5px;">
+                            <tr>
+                                <td id="ADVANTAGES" class="prefirstdiv" onclick="tab(1)">ADVANTAGES</td>
+                                <td id="BENEFITS" class="prefirstdiv" onclick="tab(2)">BENEFITS </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-group displaydiv" id="advantages_accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" data-parent="#advantages_accordion" data-target="#collapse1">
+                                <h4 class="panel-title">
+                                    <a href="#">
+                                        <span class="Pre_Txt_Close">
+                                            INTERACTION
+                                        </span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Opportunity for the organizers to interact with attendees prior to, during and/or after the event</li>
+                                        <li>Easy for organizers to share conference updates, changes in schedule and/or any comments</li>
+                                        <li>Provide event details instantly to the attendees at any time</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" data-parent="#advantages_accordion" data-target="#collapse2">
+                                <h4 class="panel-title">
+                                    <a href="#">
+                                        <span class="Pre_Txt_Close">COMPATIBILITY</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Compatible with iOS, Android or Windows device making it easy for participants</li>
+                                        <li>Hybrid build framework ensuring low installation package and high flexibility in instant content updation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" data-parent="#advantages_accordion" data-target="#collapse3">
+                                <h4 class="panel-title">
+                                    <a href="#">
+                                        <span class="Pre_Txt_Close">MULTI-PURPOSE</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Flexibility to support parallel events (simultaneous polls, Q&A and other interactivities)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" data-parent="#advantages_accordion" data-target="#collapse4">
+                                <h4 class="panel-title">
+                                    <a href="#">
+                                        <span class="Pre_Txt_Close">TRACKING</span>
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Collect feedback and user behavior to help understand each attendee’s most and least preferred content</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" panel-group displaydiv" id="benefits_accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" data-parent="#benefits_accordion" data-target="#collapse5">
+                                <h4 class="panel-title">
+                                    <a href="#">
+                                        <span class="Pre_Txt_Close">
+                                            FOR ATTENDEES
+                                        </span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse5" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Ease of navigation, networking, interaction and participation</li>
+                                        <li>Make use of attendees’ smartphones, avoiding the hassle of providing rented devices or printed materials</li>
+                                        <li>Increased participation with continuous activity on the app</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" data-parent="#benefits_accordion" data-target="#collapse6">
+                                <h4 class="panel-title">
+                                    <a href="#">
+                                        <span class="Pre_Txt_Close">FOR ORGANIZERS</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse6" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Cost effective and environment friendly, avoiding paper, printing, and rentals</li>
+                                        <li>Potential reduction in operational costs such as shipping of invites, multiple doctor visits, onsite printing, loss or damage of rented device, etc.</li>
+                                        <li>Paves the way for access to new customers using social networks and viral communications</li>
+                                        <li>Map customer behaviour using attendees’ app-usage report on in-app interaction, sections visited, polls, and queries raised</li>
+                                        <li>Increase the percentage of evaluations returned</li>
+                                        <li>Increase the level of engagement between peers and attendees-speakers through Q&A, live polls, survey, and feedbacks</li>
+                                        <li>Extends existing event assets and functions such as registration and logistics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" data-toggle="collapse" data-parent="#benefits_accordion" data-target="#collapse7">
+                                <h4 class="panel-title">
+                                    <a href="#">
+                                        <span class="Pre_Txt_Close">OTHERS</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse7" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Improves and simplifies information distribution</li>
+                                        <li>Supports more efficient data collection</li>
+                                        <li>Accommodates the younger generation of attendees</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='agenda' class='commonpage' ><div class="all-elements">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="container no-bottom">
+                <div id="DD_Days" class="dropdown-menu">
+                    <a href="#" class="dropdown-deploy">
+                        <em class="left-dropdown bg-light"></em>
+                        <span class="deploy">Select Day</span>
+                    </a>
+                    <a href="#" class="dropdown-hidden">
+                        <em class="left-dropdown bg-light"></em>
+                        <span>Select Day</span>
+                    </a>
+                    <div class="dropdown-bottom-border"></div>
+                </div>
+            </div>
+            <div class="container no-bottom">
+                <div id="DD_Session" class="dropdown-menu">
+                    <a href="#" class="dropdown-deploy">
+                        <em class="left-dropdown bg-light"></em>
+                        <span class="deploy">Select Session</span>
+                    </a>
+                    <a href="#" class="dropdown-hidden">
+                        <em class="left-dropdown bg-light"></em>
+                        <span>Select Session</span>
+                    </a>
+                    <div class="dropdown-bottom-border"></div>
+                </div>
+            </div>
+            <div id="MainAgendaData">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div style='display:none;' id='speakerlist' class='commonpage' ><div class="all-elements" id="speakerlistContainer">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="container" id="SpeakerList">  
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div style='display:none;' id='speakerdetail' class='commonpage' ><div class="all-elements" id="SpeakerDetailsContainer">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <button id="BckBtn" type="button" data-id="speakerlist" data-animate="2" onclick="changePage(this.getAttribute('data-id'));">
+                Back
+            </button>
+            <h4 class="heading center-text page-header-title" style="visibility: hidden;">Faculty Members</h4>
+            <div class="decoration" style="visibility: hidden;"></div>
+            <div id="SpeakerData">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div style='display:none;' id='venue' class='commonpage' ><div class="all-elements hasOverflow" id="venueContainer">
+    <div id="content">
+        <div class="container">
+            <div id="venueData">
+                <div class="venueTabContainer">
+                    <table>
+                        <tr>
+                            <td id="venueTab" class="venueTabHeaders" onclick="onClickVenue();">
+                                <span>Venue</span>
+                            </td>
+                            <td id="floorTab" class="venueTabHeaders" onclick="onClickFloorPlans();">
+                                <span>Floor plan</span>
+                            </td>
+                            <td id="mapsTab" class="venueTabHeaders" onclick="onClickMaps();">
+                                <span>Maps</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="venueTabContents" class="tabContents">
+                    <img id="venueImageMode" src="img/venue_p.jpg" />
+                </div>
+                <div id="floorTabContents" class="tabContents" style="display: none;">
+                    <input type="hidden" value="1" id="zoomRange" />
+                    <img src="img/floorplan.png" />
+                </div>
+                <div id="mapTabContents" class="tabContents" style="display: none;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d14435.806008538711!2d55.34642813101951!3d25.23855840144511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3e5f5d0693260e69%3A0xe695d4007a48eee9!2sDubai+International+Airport+-+Dubai+-+United+Arab+Emirates!3m2!1d25.2531745!2d55.3656728!4m5!1s0x3e5f5d7b1c467a19%3A0x500787de98cfb807!2sDubai+Festival+City+-+Crowne+Plaza+Dubai+-+Festival+City+-+Dubai+-+United+Arab+Emirates!3m2!1d25.223903999999997!2d55.349261!5e0!3m2!1sen!2sin!4v1461422039385" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div style='display:none;' id='message' class='commonpage' ><div class="all-elements">
+    <div id="content" class="page-content" >
+        <div class="main-Container">
+            <br />
+            <div id="messageContent">
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='poll' class='commonpage' ><div class="all-elements" id="pollCont">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-1">
+                <div class="optionsContainer">
+                    <h4>Choose the option</h4>
+                    <div>
+                        <img data-value="1" src="img/A.png" class="pollselect" />
+                        <img data-value="2" src="img/B.png" class="pollselect" />
+                        <img data-value="3" src="img/C.png" class="pollselect" />
+                        <img data-value="4" src="img/D.png" class="pollselect" />
+                        <img data-value="5" src="img/E.png" class="pollselect" />
+                        <img data-value="6" src="img/F.png" class="pollselect" />
+                    </div>
+                    <div id="timerspan">
+                        Watch the projector screen for the poll result.
+                    </div>
+
+                    <div class="submitButtonContainer">
+                        <div class="container">
+                            <a href="#" id="submitButton" onclick="onClickSubmitPoll()" class="demo-button button grey custom-btn">Submit</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="space-20"></div>
+            <div class="clearfix"></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div style='display:none;' id='askquery' class='commonpage' ><div class="all-elements" id="queryCont">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="container no-bottom">
+                <div id="DD_Speaker" class="dropdown-menu">
+                    <a href="#" class="dropdown-deploy">
+                        <em class="left-dropdown bg-light"></em>
+                        <span class="deploy">Select Speaker</span>
+                    </a>
+                    <a href="#" class="dropdown-hidden">
+                        <em class="left-dropdown bg-light"></em>
+                        <span>Select Speaker</span>
+                    </a>
+                    <div class="dropdown-bottom-border"></div>
+                </div>
+            </div>
+            <div class="container no-bottom">
+                <div id="DD_Topic" class="dropdown-menu">
+                    <a href="#" class="dropdown-deploy">
+                        <em class="left-dropdown bg-light"></em>
+                        <span class="deploy">Select Topic</span>
+                    </a>
+                    <a href="#" class="dropdown-hidden">
+                        <em class="left-dropdown bg-light"></em>
+                        <span>Select Topic</span>
+                    </a>
+                    <div class="dropdown-bottom-border"></div>
+                </div>
+            </div>
+            <div class="decoration"></div>
+            <div class="container">
+                <div class="formTextareaWrap">
+                    <label class="contactMessageTextarea" for="contactMessageTextarea">
+                        Query:
+                    </label>
+                    <textarea name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea"></textarea>
+                </div>
+                <a id="queryBtn" href="#" onclick="createQuery();" class="demo-button button grey custom-btn disabled">Submit</a>
+                <div class="space-20">
+                </div>
+            </div>
+            <div class="space-20">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div style='display:none;' id='feedback' class='commonpage' ><div class="all-elements" id="feedbackContainer">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 MainContent">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a href="#event_feedback_tab" role="tab" data-toggle="tab">EVENT</a>
+                    </li>
+                    <li>
+                        <a href="#venue_feedback_tab" role="tab" data-toggle="tab">VENUE</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" style="margin-top: 0px; width: 100%; background: none; border: none; outline: none;">
+                    <div class="tab-pane active" id="event_feedback_tab">
+                        <table id="event_feedback_table" cellpadding="10">
+                            <tr>
+                                <td colspan="5" id="one" style="border-top: 0px solid #fff;">
+                                    (Please provide your rating on a scale of 1 to 5, 1 being Excellent and 5 being poor)
+                                    <br /><br />
+                                    Overall, how informative was the event?<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:25%;">
+                                    Not informative
+                                </td>
+                                <td style="width:50%;">
+                                    <table style="margin-bottom:0px;">
+                                        <tr>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox01" value="1" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox01" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox02" value="2" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox02" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox03" value="3" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox03" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox04" value="4" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox04" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox05" value="5" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox05" class="css-label"></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:25%;">
+                                    Very informative
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="two" style="border-top:none;" data-img="false">
+                                    Would you be interested in attending a similar event in the future?<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:25%;">
+                                    Not interested
+                                </td>
+                                <td style="width:50%;">
+                                    <table style="margin-bottom:0px;">
+                                        <tr>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox06" value="1" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox06" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox07" value="2" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox07" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox08" value="3" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox08" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox09" value="4" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox09" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox10" value="5" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox10" class="css-label"></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:25%;">
+                                    Very interested
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="event_text_title" style="border-top:none;" data-img="false">
+                                    Any other comments<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="border-top: none;">
+                                    <textarea id="event_textarea" questionid="3" rows="5" style="width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <span class="required" id="event-error" style="display: none;">Please answer all required questions*</span>
+                                    <span id="event-success" style="display: none;color:green">Feedback submitted successfully</span>
+                                </td>
+                            </tr>
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <input type="button" id="event_sbt_btn" class="button grey custom-btn" onclick="submitFeedback('event');" value="Submit" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane" id="venue_feedback_tab">
+                        <table id="venue_feedback_table" cellpadding="10">
+                            <tr>
+                                <td colspan="5" id="four" style="border-top: 0px solid #fff;">
+                                    Were you able to see and hear the presentations clearly?<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" questionid="4" name="four" value="1" id="CkBox11" class="css-checkbox" data-group="four" onclick="SetSelection(this);" />
+                                    <label for="CkBox11" class="css-label"></label>
+                                </td>
+                                <td>
+                                    <input type="radio" questionid="4" name="four" value="2" id="CkBox12" class="css-checkbox" data-group="four" onclick="SetSelection(this);" />
+                                    <label for="CkBox12" class="css-label"></label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="5" id="five" style="border-top:none;" data-img="false">
+                                    How was the quality of food?<span class="required"> *</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width:25%;">
+                                    Excellent
+                                </td>
+                                <td style="width:50%;">
+                                    <table style="margin-bottom:0px;">
+                                        <tr>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox13" value="1" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox13" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox14" value="2" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox14" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox15" value="3" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox15" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox16" value="4" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox16" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox17" value="5" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox17" class="css-label"></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:25%;">
+                                    Poor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="venue_text_title" style="border-top:none;" data-img="false">
+                                    Any other comments<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="six" style="border-top: none;">
+                                    <textarea id="venue_textarea" questionid="6" rows="5" style="width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <span class="required" id="venue-error" style="display: none;">Please answer all required questions*</span>
+                                    <span id="venue-success" style="display: none;color:green">Feedback submitted successfully</span>
+                                </td>
+                            </tr>
+
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <input type="button" id="venue_sbt_btn" class="button grey custom-btn" onclick="submitFeedback('venue');" value="Submit" />
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='notes' class='commonpage' ><div class="all-elements">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div id="MailHeader">
+                <div onclick="onClickAddNotes();">
+                    <img src="common/img/icon/misc/addnotes.png" />
+                    <span>Take notes</span>
+                </div>
+                <div onclick="sendNotesAsMail();">
+                    <img src="common/img/icon/misc/mail.png" />
+                    <span>Email notes</span>
+                </div>
+                <br style="clear: left;" />
+            </div>
+            <br /><br />
+            <div id="notesContentContainer">
+                <input type="hidden" id="HdnSelectedTopic" value="0" />
+                <input type="hidden" id="HdnNotesId" value="0" />
+                <div class="container">
+                    <div class="row" id="userNotesSection">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='help' class='commonpage' ><div class="all-elements">
+    <div id="content" class="page-content">
+        <div class="main-Container">
+            <br />
+            <div id="helpContent">
+               
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='presentation' class='commonpage' ><div class="all-elements">
+    <div id="content" class="page-content">
+        <div class="container main-Container" id="presentationSection">
+            <br />
+            <button id="BckBtn" type="button" data-id="" data-animate="2" onclick="changePage(this.getAttribute('data-id'));">
+                Back
+            </button>
+            <h4 class="heading center-text page-header-title" style="visibility: hidden;">Presentation</h4>
+            <div class="decoration" style="visibility: hidden;"></div>
+            <div id="presentationContent">
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='highlights' class='commonpage' ><div class="all-elements" id="highlightCont">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <h4 class="heading center-text" style="display:none;">HIGHLIGHTS</h4>
+            <div class="decoration" style="display:none;"></div>
+            <div style="margin:0px auto; text-align:center">
+                <div id="gallery" style="margin:10px;">
+                    <div class="photogallery"><a class="dropdown-deploy Dropdown_Border" id="mtv" onclick="highLights(2)">Post meeting videos<em class="Icon_Meeting_Em Icon_video"></em><em class="right-dropdown bg-light"></em></a></div>
+                    <div class="photogallery"><a class="dropdown-deploy Dropdown_Border" id="mtr" onclick="highLights(3)">Post meeting Report<em class="Icon_Meeting_Em Icon_report"></em><em class="right-dropdown bg-light"></em></a></div>
+                </div>
+                <div class="tab-pane active" id="photogallery" style="display:none;">
+                    <div id="photogal">
+                        <input type="button" value="Back" class="btn_gly custom-btn" onclick="Onclick_Back()" />
+                        <h3 align="center" style="margin-bottom: 30px;">Photo Gallery</h3>
+                        <div id="slider1_container" style="position: relative; width: 700px; height: 400px; overflow: hidden; margin: 0 auto; box-shadow: black 0px 1px 9px -2px; margin-bottom:10px;">
+                            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; background-color: #000; top: 0px; left: 0px; width: 100%; height: 100%;">
+                                </div>
+                                <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;">
+                                </div>
+                            </div>
+
+                            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 700px; height: 400px; overflow: hidden;">
+                            </div>
+
+                            <div u="thumbnavigator" class="jssort07" style="position: absolute; width: 700px; height: 100px; left: 0px; bottom: 0px; overflow: hidden;">
+                                <div style=" background-color: rgba(255, 255, 255, 0.14); width: 100%; height: 100%;"></div>
+                                <style type="text/css">
+                                    .jssort07 .i {
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 99px;
+                                        height: 66px;
+                                        filter: alpha(opacity=80);
+                                        opacity: .8;
+                                    }
+
+                                    .jssort07 .p:hover .i, .jssort07 .pav .i {
+                                        filter: alpha(opacity=100);
+                                        opacity: 1;
+                                    }
+
+                                    .jssort07 .o {
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 97px;
+                                        height: 64px;
+                                        border: 1px solid #000;
+                                        transition: border-color .6s;
+                                        -moz-transition: border-color .6s;
+                                        -webkit-transition: border-color .6s;
+                                        -o-transition: border-color .6s;
+                                    }
+
+                                    * html .jssort07 .o {
+                                        width : 99px;
+                                        height : 66px;
+                                    }
+
+                                    .jssort07 .pav .o, .jssort07 .p:hover .o {
+                                        border-color: #fff;
+                                        cursor: pointer;
+                                    }
+
+                                    .jssort07 .pav:hover .o {
+                                        border-color: #0099FF;
+                                    }
+
+                                    .jssort07 .p:hover .o {
+                                        transition: none;
+                                        -moz-transition: none;
+                                        -webkit-transition: none;
+                                        -o-transition: none;
+                                    }
+                                </style>
+                                <div u="slides" style="cursor: move;">
+                                    <div u="prototype" class="p" style="POSITION: absolute; WIDTH: 99px; HEIGHT: 66px; TOP: 0; LEFT: 0;">
+                                        <thumbnailtemplate class="i" style="position: absolute;"></thumbnailtemplate>
+                                        <div class="o">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <style type="text/css">
+                                    .jssora11l, .jssora11r, .jssora11ldn, .jssora11rdn {
+                                        position: absolute;
+                                        cursor: pointer;
+                                        display: block;
+                                        background: url(../img/a11.png) no-repeat;
+                                        overflow: hidden;
+                                    }
+
+                                    .jssora11l {
+                                        background-position: -11px -41px;
+                                    }
+
+                                    .jssora11r {
+                                        background-position: -71px -41px;
+                                    }
+
+                                    .jssora11l:hover {
+                                        background-position: -131px -41px;
+                                    }
+
+                                    .jssora11r:hover {
+                                        background-position: -191px -41px;
+                                    }
+
+                                    .jssora11ldn {
+                                        background-position: -251px -41px;
+                                    }
+
+                                    .jssora11rdn {
+                                        background-position: -311px -41px;
+                                    }
+                                </style>
+                                <div style="display: none;">
+                                    <span u="arrowleft" class="jssora11l" style="width: 37px; height: 37px; top: 123px; left: 8px; display: none;"></span>
+                                    <span u="arrowright" class="jssora11r" style="width: 37px; height: 37px; top: 123px; right: 8px; display: none;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane active" id="meetingreport" style="display:none;">
+                    <input type="button" value="Back" class="btn_gly custom-btn" onclick="Onclick_Back()" style="z-index:999999;" />
+                    <h3 align="center" style="margin-bottom: 30px;">Meeting report</h3>
+                    <div id="meetrep">
+                    </div>
+                </div>
+
+                <div class="tab-pane active" id="meetingvideo" style="display:none;">
+                    <div id="meetvid">
+                        <input type="button" value="Back" class="btn_gly custom-btn" onclick="Onclick_Back()" style="z-index:999999;" />
+                        <h3 align="center" style="margin-bottom: 30px;">Meeting videos</h3>
+                        <div class="Video_div">
+                            <div class="Videos col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                                <img class="Img_Gallery" src="img/play.png" onclick="Onclickmeetingvideo(1);" />
+                            </div>
+                            <div class="Video_txt col-md-8 col-xs-8 col-sm-8 col-lg-8">
+                                <h1>Meeting video</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Meeting_video_Play" style="display:none;">
+                    <div>
+                        <input type="button" value="Back" class="btn_gly custom-btn" onclick="Onclick_Back_TO_gallery()" style="z-index:999999;" />
+                        <h3 align="center" style="margin-bottom: 30px;">Meeting video</h3>
+                        <div class="video_Player">
+                            <video id="videoPlayer" style="width: 100%;" controls>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div><div style='display:none;' id='survey' class='commonpage' ><div class="all-elements" id="surveyContainer">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 MainContent">
+                <div>
+                    <table id="survey_table" cellpadding="10">
+                        <tr>
+                            <td colspan="5" id="s_one">
+                                1. How many events do you plan each year?<span class="required"> *</span>
+                            </td>
+                        </tr>
+
+                        <tr class="survey-options">
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox01" value="1" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)"  />
+                                <label for="S_CkBox01" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox01" class="css-label-survey">1 - 5</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox02" value="2" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox02" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox02" class="css-label-survey" >6 - 10</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox03" value="3" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox03" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox03" class="css-label-survey" >11 - 15</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox04" value="4" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox04" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox04" class="css-label-survey" >16+</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_two" style="border-top:none;">
+                                2. What type of events do you plan?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox05" value="1" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox05" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox05" class="css-label-survey">Medical conferences</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox06" value="2" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox06" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox06" class="css-label-survey">Branded events</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox07" value="3" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox07" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox07" class="css-label-survey">Speaker tours</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox08" value="4" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox08" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox08" class="css-label-survey">Advisory boards</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox09" value="5" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox09" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox09" class="css-label-survey">Product launches</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_three" style="border-top:none;">
+                                3. Do you use mobile engagement app for your events?<span class="required"> *</span>
+                            </td>
+
+                        </tr>
+
+                        <tr class="survey-options">
+                            <td>
+                                <input type="radio" questionid="3" name="s_three" id="S_CkBox10" value="1" class="css-checkbox" data-group="s_three" onclick="onClickOpenNewQues(); setSurveySelection(this)" />
+                                <label for="S_CkBox10" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox10" class="css-label-survey" >Yes</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="3" name="s_three" id="S_CkBox11" value="2" class="css-checkbox" data-group="s_three" onclick="onClickCloseNewQues(); setSurveySelection(this) " />
+                                <label for="S_CkBox11" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox11" class="css-label-survey" >No</label>
+
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td colspan="6" id="s_four" style="border-top:none;">
+                                If yes, did it meet your objectives?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox12" value="1" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox12" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox12" class="css-label-survey" >Yes</label>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox13" value="2" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox13" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox13" class="css-label-survey" >Partially</label>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox14" value="3" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox14" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox14" class="css-label-survey" >No</label>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox15" value="4" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox15" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox15" class="css-label-survey" >I had no objectives</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_five" style="border-top:none;">
+                                4. What is your main reason for using an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox16" value="1" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox16" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox16" class="css-label-survey">Attendee engagement</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox17" value="2" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox17" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox17" class="css-label-survey">Environment friendly</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox18" value="3" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox18" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox18" class="css-label-survey">Attendee networking</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox19" value="4" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox19" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox19" class="css-label-survey">Collecting feedback</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox20" value="5" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox20" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox20" class="css-label-survey">Value-add</label>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox21" value="6" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox21" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox21" class="css-label-survey">Research attendee behaviour</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox22" value="7" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox22" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox22" class="css-label-survey">Competitors are using it</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox23" value="8" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox23" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox23" class="css-label-survey">All the above</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox24" value="9" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox24" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox24" class="css-label-survey">I don’t know</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox25" value="10" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox25" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox25" class="css-label-survey">I have not thought of it</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_six" style="border-top:none;">
+                                5. Which event management features are most important to you in an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox26" value="1" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox26" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox26" class="css-label-survey">Poll</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox27" value="2" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox27" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox27" class="css-label-survey">Push notifications</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox28" value="3" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox28" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox28" class="css-label-survey">Event feedback</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox29" value="4" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox29" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox29" class="css-label-survey">Speaker profiles</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox30" value="5" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox30" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox30" class="css-label-survey">Agenda</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_seven" style="border-top:none;">
+                                6. Which networking features are most important to you in an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="7" name="s_seven" id="S_CkBox31" value="1" class="css-checkbox" data-group="s_seven" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox31" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox31" class="css-label-survey">Social media</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="7" name="s_seven" id="S_CkBox32" value="2" class="css-checkbox" data-group="s_seven" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox32" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox32" class="css-label-survey">Gamification</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="7" name="s_seven" id="S_CkBox33" value="3" class="css-checkbox" data-group="s_seven" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox33" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox33" class="css-label-survey">In app chat</label>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="6" id="s_eight" style="border-top:none;">
+                                7. Which content related features are most important to you in an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox34" value="1" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox34" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox34" class="css-label-survey">Slide sharing</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox35" value="2" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox35" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox35" class="css-label-survey">Note-taking</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox36" value="3" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox36" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox36" class="css-label-survey">Pre-read</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox37" value="4" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox37" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox37" class="css-label-survey">Post meeting materials (like event videos, meeting report)</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_nine" style="border-top:none;">
+                                8. What would be main reason for you to not use an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox38" value="1" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox38" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox38" class="css-label-survey">Cost/budget</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox39" value="2" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox39" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox39" class="css-label-survey">Doesn’t fit the audience</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox40" value="3" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox40" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox40" class="css-label-survey">Lack of event planning time</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox41" value="4" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox41" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox41" class="css-label-survey">Apps do not offer features I am looking for</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox42" value="5" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox42" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox42" class="css-label-survey">Lack of ROI</label>
+                            </td>
+                        </tr>
+
+
+                        <tr style="border-top: none;">
+                            <td colspan="6" style="border-top: none;">
+                                <span class="required" id="surveyerror" style=" display:none;">Please answer all required questions *</span>
+                                <span id="surveysuccess" style=" display:none;color:green">Survey submitted successfully</span>
+                            </td>
+                        </tr>
+
+                        <tr style="border-top: none;">
+                            <td colspan="6" style="border-top: none;padding-right:5px;">
+                                <input type="button" id="surveyBtn" class="button grey custom-btn" onclick="submitSurvey();" value="Submit" />
+                            </td>
+                        </tr>
+                    </table>
+                    <p id="sucess_Msg_Survey" style="display:none;">Thank you for participating ! <br />Your responses has been successfully submitted. </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div><div style='display:none;' id='workshop' class='commonpage' ><div class="all-elements" id="workshopCont">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <!--<h4 class="heading center-text">Workshop</h4>
+            <div class="decoration"></div>-->
+            <div class="container" style="padding: 10px;">
+                <input type="hidden" id="selectedWorkshop" value="" />
+                <h3 style="margin-top:10px;"><span>Select the workshop you would like to attend</span></h3>
+                <table>
+                    <tr>
+                        <td onclick="RegisterWorkshop()">
+                            <input type="radio" id="Workshop1" value="1" work="Workshop 1" class="css-checkbox" name="check" />
+                            <label for="Workshop1" class="css-workshop-label"></label>
+                            <span style="vertical-align:middle">Workshop 1</span>
+                        </td>
+                        <td onclick="RegisterWorkshop()">
+                            <input type="radio" id="Workshop2" value="2" work="Workshop 2" class="css-checkbox" name="check" />
+                            <label for="Workshop2" class="css-workshop-label"></label>
+                            <span style="vertical-align: middle">Workshop 2</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="text-align: center; border: none">
+                            <input type="button" id="workshopBtn" class="button grey custom-btn" onclick="registerWorkshop();" value="Register" />
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="text-align: center; border: none" id="workshop-message">
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div></div>
+</div>
+<div class="clearfix"></div>
+<div style="display: none;">
+    <div id="pres1">
+        <?xml version="1.0" encoding="utf-8" ?>
+        <pages>
+            <page url="pdf/pres1/p1.jpg"></page>
+            <page url="pdf/pres1/p2.jpg"></page>
+            <page url="pdf/pres1/p3.jpg"></page>
+            <page url="pdf/pres1/p4.jpg"></page>
+        </pages>
+    </div>
+</div>
+
+<div class="modal fade" id="addNotesModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Create a note
+            </div>
+            <div class="modal-body">
+                <div id="DD_TopicList" class="dropdown-menu">
+                   
+                </div>
+                <br />
+                <textarea id="userNotes"  rows="6" class="form-control" placeholder="Write your notes here..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger custom-btn" onclick="saveNotes('add')" id="SaveNoteButton">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editNotesModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Update my note
+            </div>
+            <div class="modal-body">
+                <div id="topicToEdit"></div> 
+                <br />
+                <textarea id="userNotes" rows="6" class="form-control" placeholder="Write your notes here..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger custom-btn" onclick="saveNotes('update')" id="SaveNoteButton">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteNotesConfirmationModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Remove notes
+            </div>
+            <div class="modal-body">
+                <span>Are you sure you want to delete your notes? This action cannot be undone.</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" onclick="onClickDeleteConfirmation();">Yes</button>
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="sendMailConfirmationModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Send Notes as a Mail
+            </div>
+            <div class="modal-body">
+                <span>By this you will receive the copy of your notes taken during the conference session. If you want to receive the copy then tap 'Yes'.</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" onclick="onClickMailConfirmation();">Yes</button>
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Alert!
+            </div>
+            <div class="modal-body">
+               <span id="alertMessage"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exitPromptModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Exit
+            </div>
+            <div class="modal-body">
+                <span>Are you sure you would like to Exit?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal" onclick="onclickLogout();" id="logout">Yes</button>
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModalm" style="top: 10%" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header myModalLabel">
+                Message
+            </div>
+            <div class="modal-body">
+                <span id="alertMessage"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="surveyModal" style="top: 10%" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header myModalLabel">
+                Alert!
+            </div>
+            <div class="modal-body">
+                <span>
+                    Would you like to attend the survey questions now?
+                </span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal">Later</button>
+                <button type="button" class="btn btn-danger custom-btn" onclick="onclickYesForSurvey()">Yes</button>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Application service -->
+<script type="text/javascript" src="js/service/sessionObjects.js"></script>
+<script type="text/javascript" src="js/service/interface.js"></script>
+<script type="text/javascript" src="js/service/api.js"></script>
+<script type="text/javascript" src="js/service/serviceData.js"></script>
+
+<!-- Common codes -->
+
+<!--Application codes -->
+<script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/conference.js"></script>
+<script type="text/javascript" src="js/speakerlist.js"></script>
+<script type="text/javascript" src="js/speakerdetails.js"></script>
+<script type="text/javascript" src="js/highlights.js"></script>
+<script type="text/javascript" src="js/askquery.js"></script>
+<script type="text/javascript" src="js/feedback.js"></script>
+<script type="text/javascript" src="js/survey.js"></script>
+<script type="text/javascript" src="js/pdf.js"></script>
+<script type="text/javascript" src="js/poll.js"></script>
+<!--<script type="text/javascript" src="js/pollresult.js"></script>-->
+<script type="text/javascript" src="js/presentation.js"></script>
+<script type="text/javascript" src="js/workshop.js"></script>
+<script type="text/javascript" src="js/message.js"></script>
+<script type="text/javascript" src="js/notes.js"></script>
+<script type="text/javascript" src="js/venue.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/footer.js"></script>
+</body>
+</html>
+

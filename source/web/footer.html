@@ -1,0 +1,190 @@
+﻿</div>
+</div>
+<div class="clearfix"></div>
+<div style="display: none;">
+    <div id="pres1">
+        <?xml version="1.0" encoding="utf-8" ?>
+        <pages>
+            <page url="pdf/pres1/p1.jpg"></page>
+            <page url="pdf/pres1/p2.jpg"></page>
+            <page url="pdf/pres1/p3.jpg"></page>
+            <page url="pdf/pres1/p4.jpg"></page>
+        </pages>
+    </div>
+</div>
+
+<div class="modal fade" id="addNotesModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Create a note
+            </div>
+            <div class="modal-body">
+                <div id="DD_TopicList" class="dropdown-menu">
+                   
+                </div>
+                <br />
+                <textarea id="userNotes"  rows="6" class="form-control" placeholder="Write your notes here..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger custom-btn" onclick="saveNotes('add')" id="SaveNoteButton">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editNotesModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Update my note
+            </div>
+            <div class="modal-body">
+                <div id="topicToEdit"></div> 
+                <br />
+                <textarea id="userNotes" rows="6" class="form-control" placeholder="Write your notes here..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger custom-btn" onclick="saveNotes('update')" id="SaveNoteButton">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteNotesConfirmationModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Remove notes
+            </div>
+            <div class="modal-body">
+                <span>Are you sure you want to delete your notes? This action cannot be undone.</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" onclick="onClickDeleteConfirmation();">Yes</button>
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="sendMailConfirmationModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Send Notes as a Mail
+            </div>
+            <div class="modal-body">
+                <span>By this you will receive the copy of your notes taken during the conference session. If you want to receive the copy then tap 'Yes'.</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" onclick="onClickMailConfirmation();">Yes</button>
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Alert!
+            </div>
+            <div class="modal-body">
+               <span id="alertMessage"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exitPromptModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Exit
+            </div>
+            <div class="modal-body">
+                <span>Are you sure you would like to Exit?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal" onclick="onclickLogout();" id="logout">Yes</button>
+                <button type="button" class="btn btn-default custom-btn" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModalm" style="top: 10%" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header myModalLabel">
+                Message
+            </div>
+            <div class="modal-body">
+                <span id="alertMessage"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="surveyModal" style="top: 10%" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" disabled="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header myModalLabel">
+                Alert!
+            </div>
+            <div class="modal-body">
+                <span>
+                    Would you like to attend the survey questions now?
+                </span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger custom-btn" data-dismiss="modal">Later</button>
+                <button type="button" class="btn btn-danger custom-btn" onclick="onclickYesForSurvey()">Yes</button>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Application service -->
+<script type="text/javascript" src="js/service/sessionObjects.js"></script>
+<script type="text/javascript" src="js/service/interface.js"></script>
+<script type="text/javascript" src="js/service/api.js"></script>
+<script type="text/javascript" src="js/service/serviceData.js"></script>
+
+<!-- Common codes -->
+
+<!--Application codes -->
+<script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/conference.js"></script>
+<script type="text/javascript" src="js/speakerlist.js"></script>
+<script type="text/javascript" src="js/speakerdetails.js"></script>
+<script type="text/javascript" src="js/highlights.js"></script>
+<script type="text/javascript" src="js/askquery.js"></script>
+<script type="text/javascript" src="js/feedback.js"></script>
+<script type="text/javascript" src="js/survey.js"></script>
+<script type="text/javascript" src="js/pdf.js"></script>
+<script type="text/javascript" src="js/poll.js"></script>
+<!--<script type="text/javascript" src="js/pollresult.js"></script>-->
+<script type="text/javascript" src="js/presentation.js"></script>
+<script type="text/javascript" src="js/workshop.js"></script>
+<script type="text/javascript" src="js/message.js"></script>
+<script type="text/javascript" src="js/notes.js"></script>
+<script type="text/javascript" src="js/venue.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/footer.js"></script>
+</body>
+</html>
+

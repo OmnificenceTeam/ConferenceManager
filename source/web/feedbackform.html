@@ -1,0 +1,223 @@
+﻿<div class="all-elements" id="feedbackContainer">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 MainContent">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a href="#event_feedback_tab" role="tab" data-toggle="tab">EVENT</a>
+                    </li>
+                    <li>
+                        <a href="#venue_feedback_tab" role="tab" data-toggle="tab">VENUE</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" style="margin-top: 0px; width: 100%; background: none; border: none; outline: none;">
+                    <div class="tab-pane active" id="event_feedback_tab">
+                        <table id="event_feedback_table" cellpadding="10">
+                            <tr>
+                                <td colspan="5" id="one" style="border-top: 0px solid #fff;">
+                                    (Please provide your rating on a scale of 1 to 5, 1 being Excellent and 5 being poor)
+                                    <br /><br />
+                                    Overall, how informative was the event?<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:25%;">
+                                    Not informative
+                                </td>
+                                <td style="width:50%;">
+                                    <table style="margin-bottom:0px;">
+                                        <tr>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox01" value="1" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox01" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox02" value="2" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox02" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox03" value="3" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox03" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox04" value="4" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox04" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="1" name="one" id="CkBox05" value="5" class="css-checkbox" data-group="one" onclick="SetSelection(this);" />
+                                                <label for="CkBox05" class="css-label"></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:25%;">
+                                    Very informative
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="two" style="border-top:none;" data-img="false">
+                                    Would you be interested in attending a similar event in the future?<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:25%;">
+                                    Not interested
+                                </td>
+                                <td style="width:50%;">
+                                    <table style="margin-bottom:0px;">
+                                        <tr>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox06" value="1" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox06" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox07" value="2" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox07" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox08" value="3" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox08" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox09" value="4" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox09" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="2" name="two" id="CkBox10" value="5" class="css-checkbox" data-group="two" onclick="SetSelection(this);" />
+                                                <label for="CkBox10" class="css-label"></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:25%;">
+                                    Very interested
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="event_text_title" style="border-top:none;" data-img="false">
+                                    Any other comments<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="border-top: none;">
+                                    <textarea id="event_textarea" questionid="3" rows="5" style="width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <span class="required" id="event-error" style="display: none;">Please answer all required questions*</span>
+                                    <span id="event-success" style="display: none;color:green">Feedback submitted successfully</span>
+                                </td>
+                            </tr>
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <input type="button" id="event_sbt_btn" class="button grey custom-btn" onclick="submitFeedback('event');" value="Submit" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane" id="venue_feedback_tab">
+                        <table id="venue_feedback_table" cellpadding="10">
+                            <tr>
+                                <td colspan="5" id="four" style="border-top: 0px solid #fff;">
+                                    Were you able to see and hear the presentations clearly?<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" questionid="4" name="four" value="1" id="CkBox11" class="css-checkbox" data-group="four" onclick="SetSelection(this);" />
+                                    <label for="CkBox11" class="css-label"></label>
+                                </td>
+                                <td>
+                                    <input type="radio" questionid="4" name="four" value="2" id="CkBox12" class="css-checkbox" data-group="four" onclick="SetSelection(this);" />
+                                    <label for="CkBox12" class="css-label"></label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="5" id="five" style="border-top:none;" data-img="false">
+                                    How was the quality of food?<span class="required"> *</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width:25%;">
+                                    Excellent
+                                </td>
+                                <td style="width:50%;">
+                                    <table style="margin-bottom:0px;">
+                                        <tr>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox13" value="1" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox13" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox14" value="2" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox14" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox15" value="3" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox15" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox16" value="4" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox16" class="css-label"></label>
+                                            </td>
+                                            <td>
+                                                <input type="radio" questionid="5" name="five" id="CkBox17" value="5" class="css-checkbox" data-group="five" onclick="SetSelection(this);" />
+                                                <label for="CkBox17" class="css-label"></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:25%;">
+                                    Poor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="venue_text_title" style="border-top:none;" data-img="false">
+                                    Any other comments<span class="required"> *</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" id="six" style="border-top: none;">
+                                    <textarea id="venue_textarea" questionid="6" rows="5" style="width: 100%;"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <span class="required" id="venue-error" style="display: none;">Please answer all required questions*</span>
+                                    <span id="venue-success" style="display: none;color:green">Feedback submitted successfully</span>
+                                </td>
+                            </tr>
+
+                            <tr style="border-top: none;">
+                                <td colspan="5" style="border-top: none;">
+                                    <input type="button" id="venue_sbt_btn" class="button grey custom-btn" onclick="submitFeedback('venue');" value="Submit" />
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+#MailHeader {
+    height: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+    #MailHeader div {
+        display: inline-block;
+        margin: 0px 10%;
+    }
+
+        #MailHeader div img {
+            width: 35px;
+            margin: 0 auto;
+        }
+
+
+#addNotesModal,
+#editNotesModal {
+    top: 5% !important;
+}
+
+    #addNotesModal .modal-header,
+    #editNotesModal .modal-header,
+    #deleteNotesConfirmationModal .modal-header,
+    #alertModal .modal-header,
+    #exitPromptModal .modal-header,
+    #sendMailConfirmationModal .modal-header,
+    #surveyModal .modal-header {
+        background-color: #005585;
+        color: #fff;
+    }
+
+    #addNotesModal .modal-body,
+    #editNotesModal .modal-body {
+        min-height: 250px;
+        overflow-y: auto;
+    }
+
+        #addNotesModal .modal-body textarea,
+        #editNotesModal .modal-body textarea {
+            border-radius: 0px;
+            overflow-y: auto;
+        }
+
+    #addNotesModal .modal-content,
+    #editNotesModal .modal-content,
+    #deleteNotesConfirmationModal .modal-content,
+    #alertModal .modal-content,
+    #exitPromptModal .modal-content,
+    #sendMailConfirmationModal .modal-content,
+    #surveyModal .modal-content {
+        border-radius: 0px;
+    }
+
+#notesContentContainer .col-md-12 {
+    margin-bottom: 30px;
+}
+
+#notesContentContainer .container .row {
+    margin: 0px;
+}
+
+    #notesContentContainer .container .row img {
+        width: 35px;
+    }
+
+.notesTitle {
+    max-height:80px;
+    background-color: #269bc2;
+    width: 100%;
+    text-align: right;
+    color: #fff;
+   
+}
+.tbl_notes{
+    margin-bottom:initial !important;
+}
+    .notesTitle table tr:first-child td {
+        padding-top: 5px !important;
+        vertical-align: middle;
+    }
+
+        .notesTitle table tr:first-child td:first-child {
+            width: 93% !important;
+            text-align: left !important;
+            padding-left: 10px !important;
+            vertical-align: middle;
+            font-size: 90%;
+        }
+
+        .notesTitle table tr:first-child td:last-child {
+            padding-right: 5px !important;
+            vertical-align: middle;
+        }
+
+.notesContent {
+    min-height: 100px;
+    max-height: 100px;
+    padding: 5px;
+    background-color: #fff;
+    color: #000;
+    overflow-y: auto;
+}
+
+#deleteNotesConfirmationModal,
+#alertModal,
+#exitPromptModal,
+#sendMailConfirmationModal,
+#surveyModal {
+    top: 25% !important;
+}
+
+    #addNotesModal .btn,
+    #editNotesModal .btn,
+    #deleteNotesConfirmationModal .btn,
+    #alertModal .btn,
+    #exitPromptModal .btn,
+    #sendMailConfirmationModal .btn,
+    #surveyModal .btn {
+        border-radius: 0px !important;
+    }
+
+#topicToEdit {
+    color:#269bc2;
+    font-weight: bold;
+}

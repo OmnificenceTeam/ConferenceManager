@@ -1,0 +1,93 @@
+﻿.read-title {
+    padding: 15px;
+    font-size: 24px;
+}
+
+.read-question {
+    position: relative;
+    left: 20px;
+    margin-left: -20px;
+}
+
+#read-tab li {
+    color: #000;
+    font-size: 16px;
+    list-style: initial;
+    margin-left: 15px;
+    line-height: 20px;
+}
+
+#read-tab-title {
+    color: #d52b1e;
+    cursor: pointer;
+}
+
+.panel-group .panel {
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.panel-default > .panel-heading {
+    color: rgb(255, 255, 255);
+    background-color: #269bc2;
+}
+
+.panel-heading {
+    border-radius: 0px;
+}
+
+.panel-body {
+    padding-bottom: 0px !important;
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
+    border: none;
+    padding-left: 24px;
+    text-align: justify;
+}
+
+.panel-title {
+    font-size: 15px;
+}
+
+.panel-body {
+    font-size: 16px;
+}
+
+.accordion-toggle {
+    text-decoration: none !important;
+}
+
+.right-arrow img {
+    width: 18px;
+    display: inline;
+}
+
+.all-elements {
+    margin-top: 5px;
+}
+
+.prefirstdiv {
+    cursor: pointer;
+    background-color: #269bc2;
+    text-align: center;
+    border-right: 1px solid #fff;
+    color: #fff;
+    border-radius: 0px !important;
+}
+
+#cml {
+    background-color: #fff;
+    color: #a11c1c;
+}
+
+#pv {
+    border-right: 0;
+}
+
+.displaydiv {
+    display: none;
+    padding: 10px;
+}

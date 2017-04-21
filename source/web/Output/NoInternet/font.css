@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'ArialNarrowRegular';
+	src: url('fonts/ArialNarrowRegular.eot');
+	src: local('ArialNarrowRegular'), url('fonts/ArialNarrowRegular.woff') format('woff'), url('fonts/ArialNarrowRegular.ttf') format('truetype');
+}
+
+

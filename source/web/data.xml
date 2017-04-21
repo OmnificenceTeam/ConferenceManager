@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <page class="commonpage" url="login.html" id="login"></page>
+  <page class="commonpage" url="introduction.html"  id="introduction"></page>
+  <page class="commonpage" url="preread.html" id="preread"></page>
+  <page class="commonpage" url="agenda.html" id="agenda"></page>
+  <page class="commonpage" url="speakerlist.html" id="speakerlist"></page>
+  <page class="commonpage" url="speakerdetail.html" id="speakerdetail"></page>
+  <page class="commonpage" url="venue.html" id="venue"></page>
+  <page class="commonpage" url="message.html" id="message"></page>
+  <page class="commonpage" url="poll.html" id="poll"></page>
+  <page class="commonpage" url="askquery.html" id="askquery"></page>
+  <page class="commonpage" url="feedbackform.html" id="feedback"></page>
+  <page class="commonpage" url="notes.html" id="notes"></page>
+  <page class="commonpage" url="help.html" id="help"></page>
+  <page class="commonpage" url="presentation.html" id="presentation"></page>
+  <page class="commonpage" url="highlights.html" id="highlights"></page>
+  <page class="commonpage" url="survey.html" id="survey"></page>
+  <page class="commonpage" url="workshop.html" id="workshop"></page>
+</Items>

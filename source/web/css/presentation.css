@@ -1,0 +1,27 @@
+#presentation #BckBtn {
+	float: left; 
+	padding: 8px 10px;
+	width: 75px; 
+	color: white; 
+	background-color: #005585;
+	margin-left: 20px;
+}
+
+#pdfWrapper img {
+    width: 98%;
+	box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.39);
+	margin-top: 10px;
+	cursor: pointer;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+#pdfWrapper {
+    overflow: auto; 
+	-webkit-overflow-scrolling: touch; 
+}
+
+#helpContent img,
+#presentationContent img {
+    width: 100%;
+}

@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--Declare page as mobile friendly -->
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- Declare page as iDevice WebApp friendly -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- iDevice WebApp Splash Screen, Regular Icon, iPhone, iPad, iPod Retina Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/splash/splash-icon.png">
+    <!-- iPhone 3, 3Gs -->
+    <link rel="apple-touch-startup-image" href="img/splash/splash-screen.png" media="screen and (max-device-width: 320px)" />
+    <!-- iPhone 4 -->
+    <link rel="apple-touch-startup-image" href="img/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
+    <!-- iPhone 5 -->
+    <link rel="apple-touch-startup-image" sizes="640x1096" href="img/splash/splash-screen@3x.png" />
+
+    <title>MSCM 2016</title>
+
+    <!-- Common styles -->
+    <link rel="stylesheet" type="text/css" href="common/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/framework.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/framework-style.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/sidebar.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/bxslider.css" />
+
+    <link rel="stylesheet" type="text/css" href="common/css/swipebox.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/common.css" />
+
+    <!-- App specific styles -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/feedback.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlights.css" />
+    <link rel="stylesheet" type="text/css" href="css/introduction.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/messages.css" />
+    <link rel="stylesheet" type="text/css" href="css/poll.css" />
+    <link rel="stylesheet" type="text/css" href="css/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="css/speaker.css" />
+    <link rel="stylesheet" type="text/css" href="css/venue.css" />
+    <link rel="stylesheet" type="text/css" href="css/notes.css" />
+    <link rel="stylesheet" type="text/css" href="css/preread.css" />
+
+    <!-- Core JS -->
+    <script type="text/javascript" src="common/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="common/js/jquery-ui-min.js"></script>
+    <script type="text/javascript" src="common/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="common/js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="common/js/hammer.js"></script>
+    <script type="text/javascript" src="common/js/framework.js"></script>
+    <script type="text/javascript" src="common/js/snap.js"></script>
+    <script type="text/javascript" src="common/js/subscribe.js"></script>
+    <script type="text/javascript" src="common/js/bxslider.js"></script>
+    <script type="text/javascript" src="common/js/colorbox.js"></script>
+    <script type="text/javascript" src="common/js/custom.js"></script>
+
+    <!-- JSSOR (For Highlights)-->
+    <script type="text/javascript" src="common/js/jssor.core.js"></script>
+    <script type="text/javascript" src="common/js/jssor.utils.js"></script>
+    <script type="text/javascript" src="common/js/jssor.slider.js"></script>
+
+    <!-- Readers -->
+    <script type="text/javascript" src="common/js/xmlReader.js"></script>
+    <script type="text/javascript" src="common/js/htmlReader.js"></script>
+
+    <!-- Graph -->
+    <script type="text/javascript" src="common/js/RGraph.common.core.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.common.dynamic.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.common.tooltips.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.common.effects.js"></script>
+    <script type="text/javascript" src="common/js/RGraph.bar.js"></script>
+
+    <!-- Storage Core -->
+    <script type="text/javascript" src="js/storagecore.js"></script>
+
+    <!-- document ready -->
+    <script type="text/javascript" src="js/ready.js"></script>
+
+    <!-- Application JSON file -->
+    <script type="text/javascript" src="js/conferenceData.js"></script>
+
+    <style type="text/css">
+        *:not(html) {
+            -webkit-transform: translate3d(0,0,0);
+        }
+    </style>
+</head>
+<body class="appLogin" style="margin: 0 auto;" onload="onFirstLoad();">
+    <input type="hidden" id="HdnSpeakerId" value="0" />
+    <input type="hidden" id="HdnTopicId" value="0" />
+    <input type="hidden" id="HdnUserId" />
+    <input type="hidden" id="HdnNotyId" value="0" />
+    <input type="hidden" id="HdnOptionId" />
+
+    <div id="maincont" style="height: 400px;">
+        <div id="menu" style="display: none;">
+            <div class="page-header">
+                <table class="logo-container">
+                    <tr>
+                        <td class="logo-left">
+                            <img src="img/mscm.png" class="logo-left">
+                        </td>
+                        <td class="logo-right">
+                            <img src="img/medtrix.png" class="logo-right">
+                        </td>
+                    </tr>
+                </table>
+                <a onclick="showSideBar()" class="deploy-sidebar"></a>
+            </div>
+        </div>
+        <div id="commonHeader" style="display: none;">
+            <h4 class="heading center-text headerText" id="details-header">INTRODUCTION TO SUMMIT</h4>
+            <img id="zoomIn" src="img/zoom_in.png" onclick="onClickZoomIn();" style="display: none;">
+            <img id="zoomOut" src="img/zoom_out.png" onclick="onClickZoomOut();" style="display: none;">
+        </div>
+
+        <div id="sidemenubar" style="">
+            <div id="sidebar" class="page-sidebar">
+                <div class="page-sidebar-scroll">
+                    <div class="sidebar-header">
+                        <a onclick="showSideBar()" class="delete-sidebar"></a>
+                    </div>
+                    <p class="sidebar-separator">Main Menu</p>
+                    <a data-id="introduction" id="intro" data-title="INTRODUCTION TO SUMMIT" data-animate="1" class="nav-item intro-nav ">
+                        Introduction
+                        <em class="nav-onit"></em>
+                    </a>
+                    <a data-id="preread" id="PreM" data-title="PRE-READ" data-animate="1" class="nav-item preread-nav " onclick="onclickPrereadCmldiv();">
+                        Pre-read
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="agenda" id="AgendaM" onclick="onAgendaLoad()" data-title="AGENDA" data-animate="1" class="nav-item agenda-nav">
+                        Agenda
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="speakerlist" id="SpeakerM" onclick="onLoadSpeakerList();" data-title="FACULTY MEMBERS" data-animate="1" class="nav-item user-nav ">
+                        Faculty Members
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="venue" id="VenueM" onclick="onClickVenue();" data-title="VENUE" data-animate="1" class="nav-item venue-nav ">
+                        Venue
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="message" id="MessM" data-title="MESSAGES" onclick="onMessageLoad();" data-animate="1" class="nav-item message-nav ">
+                        Messages
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="poll" id="PollM" onclick="onLoadPoll();" data-title="POLL" data-animate="1" class="nav-item chart-nav ">
+                        Poll
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="askquery" onclick="onQueryPageLoad();" data-title="ASK A QUERY" data-animate="1" class="nav-item query-nav ">
+                        Ask a query
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="feedback" id="FeedM" data-title="FEEDBACK" data-animate="1" class="nav-item clipboard-nav ">
+                        Feedback
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="notes" id="NotesM" onclick="onLoadNotes();" data-title="NOTES" data-animate="1" class="nav-item notes-nav ">
+                        Notes
+                        <em class="nav-page"></em>
+                    </a>
+                 
+                     <a data-id="help" onclick="createHelpContents();" id="HelpM" data-title="HELP AND SUPPORT" data-animate="1" class="nav-item help-nav ">
+                        Help &amp; Support
+                        <em class="nav-page"></em>
+                    </a> 
+                    <a data-id="highlights" onclick="Onclick_Back();" id="highlightM" data-title="HIGHLIGHTS" data-animate="1" class="nav-item highlights-nav ">
+                        Highlights
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="survey" id="SurveyM" onclick="onLoadSurvey();" data-title="SURVEY" data-animate="1" class="nav-item survey-nav">
+                        Survey
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-id="workshop" id="WorkshopM" data-title="WORKSHOP" onclick="onLoadWorkshop();" data-animate="1" class="nav-item workshop-nav ">
+                        Workshop
+                        <em class="nav-page"></em>
+                    </a>
+                    <a data-toggle="modal" data-target="#exitPromptModal" data-id="#login" data-animate="2" class="nav-item logout-nav ">
+                        Logout
+                        <em class="nav-page"></em>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="contentdiv" style="">

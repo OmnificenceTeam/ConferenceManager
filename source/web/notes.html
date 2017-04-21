@@ -1,0 +1,27 @@
+﻿<div class="all-elements">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div id="MailHeader">
+                <div onclick="onClickAddNotes();">
+                    <img src="common/img/icon/misc/addnotes.png" />
+                    <span>Take notes</span>
+                </div>
+                <div onclick="sendNotesAsMail();">
+                    <img src="common/img/icon/misc/mail.png" />
+                    <span>Email notes</span>
+                </div>
+                <br style="clear: left;" />
+            </div>
+            <br /><br />
+            <div id="notesContentContainer">
+                <input type="hidden" id="HdnSelectedTopic" value="0" />
+                <input type="hidden" id="HdnNotesId" value="0" />
+                <div class="container">
+                    <div class="row" id="userNotesSection">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

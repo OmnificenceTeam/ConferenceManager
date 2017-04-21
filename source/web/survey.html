@@ -1,0 +1,387 @@
+﻿<div class="all-elements" id="surveyContainer">
+    <div id="content" class="page-content">
+        <div class="container main-Container">
+            <br />
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 MainContent">
+                <div>
+                    <table id="survey_table" cellpadding="10">
+                        <tr>
+                            <td colspan="5" id="s_one">
+                                1. How many events do you plan each year?<span class="required"> *</span>
+                            </td>
+                        </tr>
+
+                        <tr class="survey-options">
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox01" value="1" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)"  />
+                                <label for="S_CkBox01" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox01" class="css-label-survey">1 - 5</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox02" value="2" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox02" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox02" class="css-label-survey" >6 - 10</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox03" value="3" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox03" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox03" class="css-label-survey" >11 - 15</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="1" name="s_one" id="S_CkBox04" value="4" class="css-checkbox" data-group="s_one" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox04" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox04" class="css-label-survey" >16+</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_two" style="border-top:none;">
+                                2. What type of events do you plan?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox05" value="1" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox05" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox05" class="css-label-survey">Medical conferences</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox06" value="2" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox06" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox06" class="css-label-survey">Branded events</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox07" value="3" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox07" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox07" class="css-label-survey">Speaker tours</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox08" value="4" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox08" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox08" class="css-label-survey">Advisory boards</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="2" name="s_two" id="S_CkBox09" value="5" class="css-checkbox" data-group="s_two" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox09" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox09" class="css-label-survey">Product launches</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_three" style="border-top:none;">
+                                3. Do you use mobile engagement app for your events?<span class="required"> *</span>
+                            </td>
+
+                        </tr>
+
+                        <tr class="survey-options">
+                            <td>
+                                <input type="radio" questionid="3" name="s_three" id="S_CkBox10" value="1" class="css-checkbox" data-group="s_three" onclick="onClickOpenNewQues(); setSurveySelection(this)" />
+                                <label for="S_CkBox10" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox10" class="css-label-survey" >Yes</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" questionid="3" name="s_three" id="S_CkBox11" value="2" class="css-checkbox" data-group="s_three" onclick="onClickCloseNewQues(); setSurveySelection(this) " />
+                                <label for="S_CkBox11" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox11" class="css-label-survey" >No</label>
+
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td colspan="6" id="s_four" style="border-top:none;">
+                                If yes, did it meet your objectives?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox12" value="1" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox12" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox12" class="css-label-survey" >Yes</label>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox13" value="2" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox13" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox13" class="css-label-survey" >Partially</label>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox14" value="3" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox14" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox14" class="css-label-survey" >No</label>
+                            </td>
+                        </tr>
+                        <tr class="HideCls">
+                            <td>
+                                <input type="radio" questionid="4" name="s_four" id="S_CkBox15" value="4" class="css-checkbox" data-group="s_four" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox15" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox15" class="css-label-survey" >I had no objectives</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_five" style="border-top:none;">
+                                4. What is your main reason for using an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox16" value="1" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox16" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox16" class="css-label-survey">Attendee engagement</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox17" value="2" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox17" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox17" class="css-label-survey">Environment friendly</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox18" value="3" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox18" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox18" class="css-label-survey">Attendee networking</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox19" value="4" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox19" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox19" class="css-label-survey">Collecting feedback</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox20" value="5" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox20" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox20" class="css-label-survey">Value-add</label>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox21" value="6" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox21" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox21" class="css-label-survey">Research attendee behaviour</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox22" value="7" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox22" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox22" class="css-label-survey">Competitors are using it</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox23" value="8" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox23" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox23" class="css-label-survey">All the above</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox24" value="9" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox24" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox24" class="css-label-survey">I don’t know</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="5" name="s_five" id="S_CkBox25" value="10" class="css-checkbox" data-group="s_five" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox25" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox25" class="css-label-survey">I have not thought of it</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_six" style="border-top:none;">
+                                5. Which event management features are most important to you in an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox26" value="1" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox26" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox26" class="css-label-survey">Poll</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox27" value="2" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox27" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox27" class="css-label-survey">Push notifications</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox28" value="3" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox28" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox28" class="css-label-survey">Event feedback</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox29" value="4" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox29" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox29" class="css-label-survey">Speaker profiles</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="6" name="s_six" id="S_CkBox30" value="5" class="css-checkbox" data-group="s_six" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox30" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox30" class="css-label-survey">Agenda</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_seven" style="border-top:none;">
+                                6. Which networking features are most important to you in an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="7" name="s_seven" id="S_CkBox31" value="1" class="css-checkbox" data-group="s_seven" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox31" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox31" class="css-label-survey">Social media</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="7" name="s_seven" id="S_CkBox32" value="2" class="css-checkbox" data-group="s_seven" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox32" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox32" class="css-label-survey">Gamification</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="7" name="s_seven" id="S_CkBox33" value="3" class="css-checkbox" data-group="s_seven" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox33" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox33" class="css-label-survey">In app chat</label>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="6" id="s_eight" style="border-top:none;">
+                                7. Which content related features are most important to you in an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox34" value="1" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox34" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox34" class="css-label-survey">Slide sharing</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox35" value="2" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox35" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox35" class="css-label-survey">Note-taking</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox36" value="3" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox36" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox36" class="css-label-survey">Pre-read</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="8" name="s_eight" id="S_CkBox37" value="4" class="css-checkbox" data-group="s_eight" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox37" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox37" class="css-label-survey">Post meeting materials (like event videos, meeting report)</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" id="s_nine" style="border-top:none;">
+                                8. What would be main reason for you to not use an event app?<span class="required"> *</span>
+                            </td>
+                        </tr>
+                        <tr class="survey-options">
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox38" value="1" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox38" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox38" class="css-label-survey">Cost/budget</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox39" value="2" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox39" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox39" class="css-label-survey">Doesn’t fit the audience</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox40" value="3" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox40" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox40" class="css-label-survey">Lack of event planning time</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox41" value="4" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox41" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox41" class="css-label-survey">Apps do not offer features I am looking for</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" questionid="9" name="s_nine" id="S_CkBox42" value="5" class="css-checkbox" data-group="s_nine" onclick="setSurveySelection(this)" />
+                                <label for="S_CkBox42" class="css-lbl-1 css-label"></label>
+                                <label for="S_CkBox42" class="css-label-survey">Lack of ROI</label>
+                            </td>
+                        </tr>
+
+
+                        <tr style="border-top: none;">
+                            <td colspan="6" style="border-top: none;">
+                                <span class="required" id="surveyerror" style=" display:none;">Please answer all required questions *</span>
+                                <span id="surveysuccess" style=" display:none;color:green">Survey submitted successfully</span>
+                            </td>
+                        </tr>
+
+                        <tr style="border-top: none;">
+                            <td colspan="6" style="border-top: none;padding-right:5px;">
+                                <input type="button" id="surveyBtn" class="button grey custom-btn" onclick="submitSurvey();" value="Submit" />
+                            </td>
+                        </tr>
+                    </table>
+                    <p id="sucess_Msg_Survey" style="display:none;">Thank you for participating ! <br />Your responses has been successfully submitted. </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

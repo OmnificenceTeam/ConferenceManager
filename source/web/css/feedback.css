@@ -1,0 +1,194 @@
+input[type=radio].css-checkbox,
+input[type=checkbox].css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+    input[type=radio].css-checkbox + label.css-label,
+    input[type=checkbox].css-checkbox + label.css-label {
+        padding-left: 20px;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        line-height: 15px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        font-size: 15px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    input[type=radio].css-checkbox:checked + label.css-label,
+    input[type=checkbox].css-checkbox:checked + label.css-label {
+        background-position: 0 -30px;
+    }
+
+    input[type=radio].css-checkbox + label.css-workshop-label,
+    input[type=checkbox].css-checkbox + label.css-workshop-label {
+        padding-left: 20px;
+        height: 25px;
+        width: 25px;
+        display: inline-block;
+        line-height: 15px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        font-size: 15px;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-top: -3px;
+    }
+
+    input[type=radio].css-checkbox:checked + label.css-workshop-label,
+    input[type=checkbox].css-checkbox:checked + label.css-workshop-label {
+        background-position: 0 -25px;
+    }
+
+
+
+.css-label {
+    background-image: url(../img/check.png);
+}
+
+.css-lbl-1 {
+    float: left;
+}
+
+.css-label-feedback {
+    padding-left: 0px !important;
+    margin-left: 2px !important;
+    height: 15px !important;
+    background-repeat: no-repeat;
+}
+
+.css-workshop-label {
+    background-image: url(../img/check_1.png);
+}
+
+table {
+    text-shadow: none !important;
+}
+
+#feedbackContainer table,
+#suveyContainer table {
+    font-size: 12px !important;
+}
+
+#day1Header,
+#day2Header {
+    padding: 10px;
+}
+
+    #day1Header tr:first-child td:first-child,
+    #day2Header tr:first-child td:first-child {
+        text-align: justify;
+        font-weight: normal;
+        border-top: none;
+    }
+
+    #day1Header tr:last-child td:first-child,
+    #day2Header tr:last-child td:first-child {
+        font-weight: normal;
+        border-top: none;
+    }
+
+        #day1Header tr:last-child td:first-child span:first-child #day2Header tr:last-child td:first-child span:first-child {
+            font-weight: bold;
+            float: left;
+            margin-right: 12px;
+            font-weight: normal;
+            border-top: none;
+        }
+
+#feedback .MainContent .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
+#feedback .MainContent .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
+#survey .MainContent .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,
+#survay .MainContent .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: #269bc2 !important;
+    color: #fff;
+    border-radius: 0px;
+}
+
+#feedback .MainContent .nav-tabs > li > a,
+#feedback .MainContent .nav-tabs > li > a,
+#survey .MainContent .nav-tabs > li > a,
+#survey .MainContent .nav-tabs > li > a {
+    background-color: #fff !important;
+    border: 1px solid #fff;
+    color: #269bc2;
+    border-radius: 0px;
+}
+
+#day1Country,
+#day2Country {
+    width: 125px;
+    border: 1px solid rgb(196, 196, 196);
+    height: 25px;
+    color: black;
+}
+
+table tr td:only-child {
+    border-top: 1px solid #fff;
+}
+
+#Day1_table,
+#Day2_table {
+    width: 100%;
+}
+
+#feedbackContainer textarea #suveyContainer textarea {
+    width: 95%;
+    color: black;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.userCountry {
+    width: 100%;
+}
+
+    .userCountry div:first-child {
+        float: left;
+    }
+
+    .userCountry div:last-child {
+        float: left;
+        width: 50%;
+    }
+
+#Day1_table p,
+#Day2_table p {
+    font-size: 12px;
+}
+
+#dayonesuccess,
+#daytwosuccess {
+    color: #fff;
+}
+
+
+#surveysuccess {
+    color: green;
+}
+
+#surveyerror {
+    color: red;
+}
+
+#surveyContainer .MainContent {
+    padding: 10px;
+}
+
+
+.css-checkbox {
+    margin-left: 2px;
+}
+
+.HideCls {
+    display: none;
+}

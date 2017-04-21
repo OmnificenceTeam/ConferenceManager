@@ -1,0 +1,213 @@
+﻿html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    color: #000;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.updateProcess {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.loadText {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    text-align: center;
+    /*font-size: 150%;*/
+}
+
+    .loadText span {
+        font-weight: 100;
+    }
+
+/* Loading indicator */
+.loading {
+    position: relative;
+    width: 60px; /* diameter */
+    height: 60px; /* diameter */
+    margin: 0 auto;
+}
+
+    .outer, .inner, .loading:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+    /* Mask */
+    .loading:after {
+        content: " ";
+        margin: 4%; /* stroke width */
+        border-radius: 100%;
+        background: #000; /* container background */
+    }
+/* Spinning gradients */
+.outer, .inner {
+    animation-duration: 4s; /* speed */
+    -webkit-animation-duration: 4s; /* speed */
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+}
+
+.outer {
+    animation-name: rotate-outer;
+    -webkit-animation-name: rotate-outer;
+}
+
+.inner {
+    animation-name: rotate-inner;
+    -webkit-animation-name: rotate-inner;
+}
+    /* Halfs */
+    .outer:before, .inner:before, .outer:after, .inner:after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        content: " ";
+    }
+    /* Left half */
+    .outer:before, .inner:before {
+        left: 0;
+        right: 50%;
+        border-radius: 72px 0 0 72px; /* diameter */
+    }
+    /* Right half */
+    .outer:after, .inner:after {
+        left: 50%;
+        right: 0;
+        border-radius: 0 72px 72px 0; /* diameter */
+    }
+/* Half gradients */
+.outer:before {
+    background-image: -webkit-linear-gradient(top, hsla(0, 0%, 100%, 0.0), hsla(0, 0%, 100%, 0.5));
+    background-image: -moz-linear-gradient(top, hsla(0, 0%, 100%, 0.0), hsla(0, 0%, 100%, 0.5));
+    background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.0), hsla(0, 0%, 100%, 0.5));
+}
+
+.outer:after {
+    background-image: -webkit-linear-gradient(top, hsla(0, 0%, 100%, 1.0), hsla(0, 0%, 100%, 0.5));
+    background-image: -moz-linear-gradient(top, hsla(0, 0%, 100%, 1.0), hsla(0, 0%, 100%, 0.5));
+    background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 1.0), hsla(0, 0%, 100%, 0.5));
+}
+
+.inner:before {
+    background-image: -webkit-linear-gradient(top, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 75%, 0.5));
+    background-image: -moz-linear-gradient(top, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 75%, 0.5));
+    background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 75%, 0.5));
+}
+
+.inner:after {
+    background-image: -webkit-linear-gradient(top, hsla(0, 0%, 50%, 0.5), hsla(0, 0%, 75%, 0.5));
+    background-image: -moz-linear-gradient(top, hsla(0, 0%, 50%, 0.5), hsla(0, 0%, 75%, 0.5));
+    background-image: linear-gradient(to bottom, hsla(0, 0%, 50%, 0.5), hsla(0, 0%, 75%, 0.5));
+}
+/* Spinning animations */
+@keyframes rotate-outer {
+    0% {
+        transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1080deg);
+        -moz-transform: rotate(1080deg);
+        -webkit-transform: rotate(1080deg);
+    }
+}
+
+@-webkit-keyframes rotate-outer {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(1080deg);
+    }
+}
+
+@keyframes rotate-inner {
+    0% {
+        transform: rotate(720deg);
+        -moz-transform: rotate(720deg);
+        -webkit-transform: rotate(720deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes rotate-inner {
+    0% {
+        -webkit-transform: rotate(720deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+
+/* Reverted code */
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background: url('../../img/bg.jpg') no-repeat;
+    background-size: 100% 100% !important;
+    color: #000;
+    overflow: hidden;
+}
+
+progress {
+    -webkit-appearance: none;
+    border: none;
+}
+
+    progress::-webkit-progress-bar {
+        background: #000;
+        border-radius: 0px;
+        padding: 2px;
+        box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    progress::-webkit-progress-value {
+        border-radius: 0px;
+        box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+        background: -webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)), -webkit-linear-gradient(left, #269bc2, #269bc2);
+        background-size: 20px 10px, 100% 100%, 100% 100%;
+    }
+
+#updateProcess {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    text-align: center;
+    padding: 0px 10px;
+}
+
+.logo-container {
+    width: 100%;
+    max-width: 350px;
+    min-width: 180px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 15%;
+}

@@ -1,0 +1,36 @@
+.messageImg {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.messageTime {
+    float: right;
+    margin-right: 20px;
+}
+
+.read:hover {
+    background-color: rgba(255, 255, 255, 0.37);
+    border-radius: 9px;
+}
+
+.unread:hover {
+    background-color: rgba(255, 255, 255, 0.37);
+    border-radius: 9px;
+}
+
+.read {
+    cursor: pointer;
+}
+
+.unread {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.messageTitle {
+    font-size: 14px;
+    margin: 10px 0px 2px 0px;
+}
