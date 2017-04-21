@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FCFD1ED-914D-41B2-A6DD-75ACEBD7FDD8}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConferenceWebApp</RootNamespace>
+    <AssemblyName>ConferenceWebApp</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ConferenceWebApp_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ConferenceWebApp.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\NoInternet\fonts\ArialNarrowRegular.eot" />
+    <None Include="Assets\NoInternet\fonts\ArialNarrowRegular.TTF" />
+    <None Include="Assets\NoInternet\fonts\ArialNarrowRegular.woff" />
+    <None Include="Assets\NoInternet\fonts\gothic.eot" />
+    <None Include="Assets\NoInternet\fonts\gothic.ttf" />
+    <None Include="Assets\NoInternet\fonts\gothic.woff" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="100.png" />
+    <Content Include="159.png" />
+    <Content Include="400x800.png" />
+    <Content Include="691 336.png" />
+    <Content Include="691x336.png" />
+    <Content Include="768.png" />
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\NoInternet\font.css" />
+    <Content Include="Assets\NoInternet\internet.html" />
+    <Content Include="Assets\NoInternet\internet.png" />
+    <Content Include="Assets\NoInternet\logo.png" />
+    <Content Include="Assets\NoInternet\MENA_logo.png" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Webappui\common\css\animate.css" />
+    <Content Include="Assets\Webappui\common\css\bootstrap.min.css" />
+    <Content Include="Assets\Webappui\common\css\bxslider.css" />
+    <Content Include="Assets\Webappui\common\css\common.css" />
+    <Content Include="Assets\Webappui\common\css\framework-style.css" />
+    <Content Include="Assets\Webappui\common\css\framework.css" />
+    <Content Include="Assets\Webappui\common\css\sidebar.css" />
+    <Content Include="Assets\Webappui\common\css\swipebox.css" />
+    <Content Include="Assets\Webappui\common\css\updater.css" />
+    <Content Include="Assets\Webappui\common\img\colorbox\controls.png" />
+    <Content Include="Assets\Webappui\common\img\detector\droid.png" />
+    <Content Include="Assets\Webappui\common\img\detector\ipad.png" />
+    <Content Include="Assets\Webappui\common\img\detector\iphone.png" />
+    <Content Include="Assets\Webappui\common\img\icon\charts\graph.png" />
+    <Content Include="Assets\Webappui\common\img\icon\communication\speechbubble2.png" />
+    <Content Include="Assets\Webappui\common\img\icon\location\maps.png" />
+    <Content Include="Assets\Webappui\common\img\icon\location\marker.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\accessdenied.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\addnotes.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\booklarge.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\clipboard.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\file.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\gallery.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\highlight.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\infoabout.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\link-shortcut.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\logout.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\mail.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\message.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\notes.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\post.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\preread.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\survey.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\video.png" />
+    <Content Include="Assets\Webappui\common\img\icon\misc\workshop.png" />
+    <Content Include="Assets\Webappui\common\img\icon\user\group2.png" />
+    <Content Include="Assets\Webappui\common\img\misc\deploy-menu_402x.png" />
+    <Content Include="Assets\Webappui\common\img\misc\next-shortcut.png" />
+    <Content Include="Assets\Webappui\common\img\misc\onit-shortcut.png" />
+    <Content Include="Assets\Webappui\common\img\notification\disable.png" />
+    <Content Include="Assets\Webappui\common\img\notification\info.png" />
+    <Content Include="Assets\Webappui\common\img\notification\tip.png" />
+    <Content Include="Assets\Webappui\common\img\notification\warning.png" />
+    <Resource Include="Assets\Webappui\common\img\status.gif" />
+    <Content Include="Assets\Webappui\common\img\ui\arrow-down.png" />
+    <Content Include="Assets\Webappui\common\img\ui\arrow-right.png" />
+    <Content Include="Assets\Webappui\common\img\ui\arrow-right2.png" />
+    <Content Include="Assets\Webappui\common\img\ui\arrow-right3.png" />
+    <Content Include="Assets\Webappui\common\img\ui\arrow-up.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox-selected.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox-selected_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox2-selected.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox2-selected_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox2.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox2_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\checkbox_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\cross.png" />
+    <Content Include="Assets\Webappui\common\img\ui\cross_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\empty.png" />
+    <Content Include="Assets\Webappui\common\img\ui\empty_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\minus.png" />
+    <Content Include="Assets\Webappui\common\img\ui\minus_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\plus.png" />
+    <Content Include="Assets\Webappui\common\img\ui\plus_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio-selected.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio-selected_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio2-selected.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio2-selected_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio2.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio2_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\radio_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\sort-1.png" />
+    <Content Include="Assets\Webappui\common\img\ui\sort-a.png" />
+    <Content Include="Assets\Webappui\common\img\ui\switch-off.png" />
+    <Content Include="Assets\Webappui\common\img\ui\switch-off_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\switch-on.png" />
+    <Content Include="Assets\Webappui\common\img\ui\switch-on_402x.png" />
+    <Content Include="Assets\Webappui\common\img\ui\tick.png" />
+    <Content Include="Assets\Webappui\common\img\ui\tick_402x.png" />
+    <Content Include="Assets\Webappui\common\js\bootstrap.min.js" />
+    <Content Include="Assets\Webappui\common\js\bxslider.js" />
+    <Content Include="Assets\Webappui\common\js\colorbox.js" />
+    <Content Include="Assets\Webappui\common\js\custom.js" />
+    <Content Include="Assets\Webappui\common\js\framework.js" />
+    <Content Include="Assets\Webappui\common\js\hammer.js" />
+    <Content Include="Assets\Webappui\common\js\htmlReader.js" />
+    <Content Include="Assets\Webappui\common\js\jquery-1.11.1.min.js" />
+    <Content Include="Assets\Webappui\common\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Assets\Webappui\common\js\jquery-ui-min.js" />
+    <Content Include="Assets\Webappui\common\js\jquery.swipebox.js" />
+    <Content Include="Assets\Webappui\common\js\jssor.core.js" />
+    <Content Include="Assets\Webappui\common\js\jssor.slider.js" />
+    <Content Include="Assets\Webappui\common\js\jssor.utils.js" />
+    <Content Include="Assets\Webappui\common\js\RGraph.bar.js" />
+    <Content Include="Assets\Webappui\common\js\RGraph.common.core.js" />
+    <Content Include="Assets\Webappui\common\js\RGraph.common.dynamic.js" />
+    <Content Include="Assets\Webappui\common\js\RGraph.common.effects.js" />
+    <Content Include="Assets\Webappui\common\js\RGraph.common.tooltips.js" />
+    <Content Include="Assets\Webappui\common\js\snap.js" />
+    <Content Include="Assets\Webappui\common\js\subscribe.js" />
+    <Content Include="Assets\Webappui\common\js\updater.js" />
+    <Content Include="Assets\Webappui\common\js\xmlReader.js" />
+    <Content Include="Assets\Webappui\img\A.png" />
+    <Content Include="Assets\Webappui\img\A1.png" />
+    <Content Include="Assets\Webappui\img\B.png" />
+    <Content Include="Assets\Webappui\img\B1.png" />
+    <Content Include="Assets\Webappui\img\bg.jpg" />
+    <Content Include="Assets\Webappui\img\C.png" />
+    <Content Include="Assets\Webappui\img\C1.png" />
+    <Content Include="Assets\Webappui\img\check.png" />
+    <Content Include="Assets\Webappui\img\check_1.png" />
+    <Content Include="Assets\Webappui\img\D.png" />
+    <Content Include="Assets\Webappui\img\D1.png" />
+    <Content Include="Assets\Webappui\img\delete.png" />
+    <Content Include="Assets\Webappui\img\down-arrow.png" />
+    <Content Include="Assets\Webappui\img\E.png" />
+    <Content Include="Assets\Webappui\img\E1.png" />
+    <Content Include="Assets\Webappui\img\edit.png" />
+    <Content Include="Assets\Webappui\img\email.png" />
+    <Content Include="Assets\Webappui\img\emailopen.png" />
+    <Content Include="Assets\Webappui\img\F.png" />
+    <Content Include="Assets\Webappui\img\F1.png" />
+    <Content Include="Assets\Webappui\img\filled.jpg" />
+    <Content Include="Assets\Webappui\img\floorplan.png" />
+    <Content Include="Assets\Webappui\img\frames\1.png" />
+    <Content Include="Assets\Webappui\img\frames\10.png" />
+    <Content Include="Assets\Webappui\img\frames\11.png" />
+    <Content Include="Assets\Webappui\img\frames\12.png" />
+    <Content Include="Assets\Webappui\img\frames\13.png" />
+    <Content Include="Assets\Webappui\img\frames\14.png" />
+    <Content Include="Assets\Webappui\img\frames\15.png" />
+    <Content Include="Assets\Webappui\img\frames\2.png" />
+    <Content Include="Assets\Webappui\img\frames\3.png" />
+    <Content Include="Assets\Webappui\img\frames\4.png" />
+    <Content Include="Assets\Webappui\img\frames\5.png" />
+    <Content Include="Assets\Webappui\img\frames\6.png" />
+    <Content Include="Assets\Webappui\img\frames\7.png" />
+    <Content Include="Assets\Webappui\img\frames\8.png" />
+    <Content Include="Assets\Webappui\img\frames\9.png" />
+    <Content Include="Assets\Webappui\img\help\help_1.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_10.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_11.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_12.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_2.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_3.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_4.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_5.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_6.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_7.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_8.jpg" />
+    <Content Include="Assets\Webappui\img\help\help_9.jpg" />
+    <Content Include="Assets\Webappui\img\medtrix.png" />
+    <Content Include="Assets\Webappui\img\mscm.png" />
+    <Content Include="Assets\Webappui\img\play.png" />
+    <Content Include="Assets\Webappui\img\right-arrow.png" />
+    <Content Include="Assets\Webappui\img\shadow.png" />
+    <Resource Include="Assets\Webappui\img\status.gif" />
+    <Content Include="Assets\Webappui\img\unfilled.jpg" />
+    <Content Include="Assets\Webappui\img\venue_p.jpg" />
+    <Content Include="Assets\Webappui\img\zoom_in.png" />
+    <Content Include="Assets\Webappui\img\zoom_out.png" />
+    <Content Include="Assets\Webappui\update.html" />
+    <Content Include="FlipCycleTileMedium.png" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Resources\Appicon.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpZipLib.WindowsPhone7">
+      <HintPath>..\dll\SharpZipLib.WindowsPhone7.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Webappui\common\pdf\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

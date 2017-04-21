@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E50BDEB6-6D3F-4A7F-8215-ECDB92BC8F8F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ConferenceApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1204894D-C708-4516-BB5E-D2D09814EFCD</key>
+		<string>https://www.omnificence.in/svn/medtrix/trunk/ConferenceManager</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ConferenceApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1204894D-C708-4516-BB5E-D2D09814EFCD</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>1204894D-C708-4516-BB5E-D2D09814EFCD</key>
+		<string>https://www.omnificence.in/svn/medtrix</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://www.omnificence.in/svn/medtrix/trunk/ConferenceManager/source/iOSApp/ConferenceApp.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1204894D-C708-4516-BB5E-D2D09814EFCD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1204894D-C708-4516-BB5E-D2D09814EFCD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ConferenceManager</string>
+		</dict>
+	</array>
+</dict>
+</plist>
